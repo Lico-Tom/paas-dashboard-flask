@@ -9,10 +9,10 @@ instance_api = Blueprint('instances', __name__)
 redis_instance_map = {}
 
 # Get all Redis instances
-# eg: REDIS_DEFAULT_URL=redis://localhost:6379
-#     REDIS_DEFAULT_CLUSTER_URL=redis://localhost:6379
-prefix_len = len('REDIS_')
-env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('REDIS_')}
+# eg: PD_REDIS_DEFAULT_URL=redis://localhost:6379
+#     PD_REDIS_DEFAULT_CLUSTER_URL=redis://localhost:6379
+prefix_len = len('PD_REDIS_')
+env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('PD_REDIS_')}
 for key, value in env_map.items():
     index = key.index('_')
     name = key[:index].lower()

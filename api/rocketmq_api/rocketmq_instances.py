@@ -9,9 +9,9 @@ instance_api = Blueprint('instances', __name__)
 rocketmq_instance_map = {}
 
 # Get all Rocketmq instances
-# eg: ROCKETMQ_DEFAULT_NAMESRV_ADDR=localhost:9876
-#     ROCKETMQ_DEFAULT_CLUSTER=DefaultCluster
-prefix_len = len('ROCKETMQ_')
+# eg: PD_ROCKETMQ_DEFAULT_NAMESRV_ADDR=localhost:9876
+#     PD_ROCKETMQ_DEFAULT_CLUSTER=DefaultCluster
+prefix_len = len('PD_ROCKETMQ_')
 env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('ROCKETMQ_')}
 for key, value in env_map.items():
     index = key.index('_')

@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 from api.kafka_api.kafka_route import kafka_route
 from api.kubernetes_api.kubernetes_route import kubernetes_route
-from api.mogo_api.mogo_route import mogo_route
+from api.mongo_api.mongo_route import mogo_route
 from api.pulsar_api.pulsar_route import pulsar_route
 from api.redis_api.redis_route import redis_route
 from api.rocketmq_api.rocketmq_route import rocketmq_route

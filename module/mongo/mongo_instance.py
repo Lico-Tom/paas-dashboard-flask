@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class MogoInstance:
+class MongoInstance:
     name: str = ""
     host: str = ""
     port: str = ""

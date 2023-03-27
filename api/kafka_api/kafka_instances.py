@@ -9,9 +9,9 @@ instance_api = Blueprint('instances', __name__)
 kafka_instance_map = {}
 
 # Get all Kafka instances
-# eg: KAFKA_DEFAULT_BOOTSTRAP_SERVERS=localhost:9092
-prefix_len = len('KAFKA_')
-env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('KAFKA_')}
+# eg: PD_KAFKA_DEFAULT_BOOTSTRAP_SERVERS=localhost:9092
+prefix_len = len('PD_KAFKA_')
+env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('PD_KAFKA_')}
 for key, value in env_map.items():
     index = key.index('_')
     name = key[:index].lower()

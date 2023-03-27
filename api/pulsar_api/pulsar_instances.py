@@ -9,11 +9,11 @@ instance_api = Blueprint('instances', __name__)
 pulsar_instance_map = {}
 
 # Get all Pulsar instances
-# eg: PULSAR_HOST=localhost
-#     PULSAR_WEB_PORT=8080
-#     PULSAR_TCP_PORT=6650
-prefix_len = len('PULSAR_')
-env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('PULSAR_')}
+# eg: PD_PULSAR_HOST=localhost
+#     PD_PULSAR_WEB_PORT=8080
+#     PD_PULSAR_TCP_PORT=6650
+prefix_len = len('PD_PULSAR_')
+env_map = {k[prefix_len:]: v for k, v in os.environ.items() if k.startswith('PD_PULSAR_')}
 for key, value in env_map.items():
     index = key.index('_')
     name = key[:index].lower()
