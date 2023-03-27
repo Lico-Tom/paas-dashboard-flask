@@ -1,3 +1,4 @@
+import json
 from flask import Blueprint, jsonify, request
 from kubernetes import client
 
@@ -27,7 +28,7 @@ def patch_deployment(namespace, deployment_name):
     v1.patch_namespaced_deployment(
         name=deployment_name,
         namespace=namespace,
-        body=patch_data,
+        body=json.loads(patch_data),
     )
 
     # Return a success message

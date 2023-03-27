@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 from api.kafka_api.kafka_route import kafka_route
 from api.kubernetes_api.kubernetes_route import kubernetes_route
-from api.mongo_api.mongo_route import mogo_route
+from api.mongo_api.mongo_route import mongo_route
 from api.pulsar_api.pulsar_route import pulsar_route
 from api.redis_api.redis_route import redis_route
 from api.rocketmq_api.rocketmq_route import rocketmq_route
@@ -17,7 +17,7 @@ CORS(app)
 
 app.register_blueprint(kafka_route, url_prefix='/api/kafka')
 app.register_blueprint(kubernetes_route, url_prefix='/api/kubernetes')
-app.register_blueprint(mogo_route, url_prefix='/api/mogo')
+app.register_blueprint(mongo_route, url_prefix='/api/mongo')
 app.register_blueprint(pulsar_route, url_prefix='/api/pulsar')
 app.register_blueprint(redis_route, url_prefix='/api/redis')
 app.register_blueprint(rocketmq_route, url_prefix='/api/rocketmq')
